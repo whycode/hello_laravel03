@@ -30,19 +30,6 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <button type="submit" class="btn btn-primary">登录</button>
                 </form>
 
