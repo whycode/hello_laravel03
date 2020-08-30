@@ -58,14 +58,15 @@ class User extends Authenticatable
         return Status::whereIn('user_id',$user_ids)->with('user')->orderBy('created_at','desc');
     }
 
-    public function followers()
+
+    public function followers()   //我们可以通过 followers 来获取粉丝关系列表
     {
         return $this->belongsToMany(User::Class,'followers','user_id','follower_id');
     }
 
-    public function followings()
+    public function followings()   //通过 followings 来获取用户关注人列表
     {
-        return $this->belongsToMany(User::Class,'followers','follower_id','user_id');
+        return $this->belongsToMany(User::class,'followers','follower_id','user_id');
     }
 
     public function follow($user_ids)
@@ -89,11 +90,4 @@ class User extends Authenticatable
     {
         return $this->followings->contains($user_id);
     }
-
-
-
-
-
-
-
 }
